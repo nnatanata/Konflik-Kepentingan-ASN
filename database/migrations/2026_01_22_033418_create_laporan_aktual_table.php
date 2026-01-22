@@ -23,7 +23,10 @@ return new class extends Migration
             $table->text('kaitan_konflik');
             $table->text('saran_pengendalian')->nullable();
 
-            $table->foreignId('users_id')->constrained('users');
+            $table->string('pegawai_nip');
+            $table->foreign('pegawai_nip')
+                ->references('nip')
+                ->on('pegawai');
             $table->foreignId('verifikasi_id')->nullable()->constrained('verifikasi');
 
             $table->timestamps();
