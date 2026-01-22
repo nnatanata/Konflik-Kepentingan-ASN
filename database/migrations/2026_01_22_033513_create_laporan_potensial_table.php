@@ -29,7 +29,7 @@ return new class extends Migration
             $table->text('organisasi_nirlaba')->nullable();
             $table->text('rencana_pensiun')->nullable();
 
-            $table->foreignId('users_id')->constrained('users');
+            $table->foreignId('users_id')->constrained('pengguna');
             $table->foreignId('verifikasi_id')->nullable()->constrained('verifikasi');
 
             $table->timestamps();
